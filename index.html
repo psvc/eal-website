@@ -169,6 +169,16 @@
   }
 
   /* ===========================================================
+     MISSION (new, sits between hero and "what we're building")
+     =========================================================== */
+  .mission p{
+    max-width:62ch;
+    font-size:19px;
+    color:var(--ink);
+    line-height:1.6;
+  }
+
+  /* ===========================================================
      GENERIC SECTION SPACING
      =========================================================== */
   section{ padding:104px 0; }
@@ -206,12 +216,19 @@
     opacity:0.55;
     padding-top:3px;
   }
+  .stack-item .stack-title{
+    margin:0 0 8px;
+    color:var(--ink);
+    font-family:var(--display);
+    font-weight:600;
+    font-size:18px;
+  }
   .stack-item p{
     margin:0;
-    color:var(--ink);
-    font-size:18px;
-    line-height:1.55;
-    max-width:56ch;
+    color:var(--text);
+    font-size:15.5px;
+    line-height:1.6;
+    max-width:58ch;
   }
   @media (max-width:640px){
     .stack-item{ grid-template-columns:1fr; gap:10px; }
@@ -228,27 +245,28 @@
     padding-bottom:48px;
     border-bottom:1px solid var(--line);
   }
-  .leaders{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
+  .leaders{ border-top:1px solid var(--line); }
   .leader{
-    background:var(--bg);
-    padding:32px 28px;
+    padding:30px 0;
+    border-bottom:1px solid var(--line);
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:32px;
   }
   .leader .name{
     font-family:var(--display);
     color:var(--ink);
-    font-size:17px;
+    font-size:18px;
     font-weight:600;
-    margin-bottom:10px;
   }
-  .leader .bio{ font-size:14.5px; color:var(--text); line-height:1.55; }
+  .leader .bio{
+    font-size:15.5px;
+    color:var(--text);
+    line-height:1.6;
+    max-width:56ch;
+  }
   @media (max-width:640px){
-    .leaders{ grid-template-columns:1fr; }
+    .leader{ grid-template-columns:1fr; gap:8px; }
   }
 
   /* ===========================================================
@@ -332,8 +350,21 @@
     </div>
     <div class="hero-content">
       <span class="eyebrow">Europejska Akademia Lotnictwa</span>
-      <h1>A school, platform, and community for the people who keep European aviation airborne.</h1>
-      <p class="hero-sub">Certification. Software. Talent. Built by people who work in hangars, not just around them.</p>
+      <h1>A school, platform, and community for the people who keep European aviation flying.</h1>
+      <p class="hero-sub">Certification. Software. Talent. Led by people who work in hangars, not just around them.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       MISSION
+       ========================================================= -->
+  <section class="mission" id="mission">
+    <div class="wrap">
+      <div class="heading">
+        <span class="eyebrow">Our mission</span>
+        <h2>Every mechanic, at every stage.</h2>
+      </div>
+      <p>We guide aircraft mechanics at every stage of their journey — from first steps in aviation to a full Aircraft Maintenance Licence (AML). Whether you're starting from zero, already hold Certificates of Recognition (CoR), or need experience at MROs to finalise your licence, we help you navigate the path.</p>
     </div>
   </section>
 
@@ -344,24 +375,36 @@
     <div class="wrap">
       <div class="heading">
         <span class="eyebrow">What we're building</span>
-        <h2>Four parts of one system, built for the hangar floor.</h2>
+        <h2>Four connected pillars, all designed for the hangar floor.</h2>
       </div>
 
       <div class="stack-item">
         <span class="num">01</span>
-        <p>Certification pathways — supporting mechanics through Part 66 and Part 147 qualification across the EU.</p>
+        <div>
+          <p class="stack-title">Certification pathways</p>
+          <p>Clear, structured route from zero to the Aircraft Maintenance Licence license. We support mechanics who already have CoRs from accredited EASA-approved partners, and help them find the practical experience and guidance they need to complete their AML.</p>
+        </div>
       </div>
       <div class="stack-item">
         <span class="num">02</span>
-        <p>Digital tools for maintenance operations — because the hangar deserves better software.</p>
+        <div>
+          <p class="stack-title">Digital tools for maintenance</p>
+          <p>Modern, practical software for maintenance operations. We build tools that match the reality of the hangar — smarter workflows, better documentation, and integrations that work for engineers.</p>
+        </div>
       </div>
       <div class="stack-item">
         <span class="num">03</span>
-        <p>Talent and education — structured programs for the next generation of aviation engineers.</p>
+        <div>
+          <p class="stack-title">Talent and education</p>
+          <p>Programs for new candidate and upskilling for experienced mechanics. From foundational training to advanced specialisation, we focus on building confident, competent aviation engineers ready for real-world operations.</p>
+        </div>
       </div>
       <div class="stack-item">
         <span class="num">04</span>
-        <p>Community — connecting the people who do the technical work that keeps aviation safe.</p>
+        <div>
+          <p class="stack-title">Community</p>
+          <p>A network for the people who keep aircraft safe and serviceable. We connect mechanics, engineers, instructors, and MROs, creating a shared space for knowledge, opportunities, and professional growth.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -393,7 +436,7 @@
         </div>
         <div class="leader">
           <div class="name">Piotr Surie Von Czechowski</div>
-          <div class="bio">Data product scientist (15 years) building operational systems for complex industries. Leads day-to-day operations.</div>
+          <div class="bio">Data product scientist (15 years) building operational systems for complex industries. Leading day-to-day operations.</div>
         </div>
       </div>
     </div>
@@ -411,7 +454,7 @@
 
       <ul class="audience">
         <li>Licensed mechanics navigating EU certification</li>
-        <li>Small MROs and maintenance shops</li>
+        <li>MRO organisations and maintenance shops</li>
         <li>Flight schools and aero clubs</li>
         <li>Engineers entering the sector</li>
         <li>Anyone who cares about the future of general aviation in Europe</li>

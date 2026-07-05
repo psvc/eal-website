@@ -9,10 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Inter:wght@400;500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-
-  /* ===========================================================
-     TOKENS
-     =========================================================== */
   :root{
     --bg:        #F2F4F7;   /* Signal White */
     --text:      #344054;   /* body copy */
@@ -51,9 +47,7 @@
   :focus-visible{ outline:2px solid var(--ink); outline-offset:3px; }
   @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
 
-  /* ===========================================================
-     NAV — minimal, mono wordmark
-     =========================================================== */
+  /* NAV */
   header.site{
     position:sticky; top:0; z-index:20;
     background:rgba(242,244,247,0.9);
@@ -81,13 +75,7 @@
     color:var(--text);
   }
 
-  /* ===========================================================
-     SECTION 1 — HERO
-     Signature element: an abstract turbine/prop ring rendered in
-     pure CSS (conic-gradient blades + concentric rules). This is
-     the placeholder for a full-bleed photograph — see the comment
-     block right before .hero in this file for how to swap it in.
-     =========================================================== */
+  /* HERO */
   .hero{
     position:relative;
     min-height:88vh;
@@ -99,8 +87,6 @@
     overflow:hidden;
     border-bottom:1px solid rgba(242,244,247,0.15);
   }
-  /* Swap this rig out for a real <img class="hero-photo"> once you have
-     licensed hangar/engine photography — see README for sourcing. */
   .hero-rig{
     position:absolute;
     top:50%; right:clamp(-120px, 4vw, 40px);
@@ -168,9 +154,7 @@
     font-size:16px;
   }
 
-  /* ===========================================================
-     MISSION (new, sits between hero and "what we're building")
-     =========================================================== */
+  /* MISSION */
   .mission p{
     max-width:62ch;
     font-size:19px;
@@ -178,9 +162,7 @@
     line-height:1.6;
   }
 
-  /* ===========================================================
-     GENERIC SECTION SPACING
-     =========================================================== */
+  /* LAYOUT ELEMENTS */
   section{ padding:104px 0; }
   section .heading{
     display:grid;
@@ -197,9 +179,7 @@
     section .heading{ grid-template-columns:1fr; gap:14px; }
   }
 
-  /* ===========================================================
-     SECTION 2 — WHAT WE ARE BUILDING
-     =========================================================== */
+  /* WHAT WE ARE BUILDING */
   .stack-item{
     border-top:1px solid var(--line);
     padding:30px 0;
@@ -234,9 +214,7 @@
     .stack-item{ grid-template-columns:1fr; gap:10px; }
   }
 
-  /* ===========================================================
-     SECTION 3 — LEADERSHIP
-     =========================================================== */
+  /* LEADERSHIP */
   .lede{
     max-width:62ch;
     font-size:17px;
@@ -269,10 +247,8 @@
     .leader{ grid-template-columns:1fr; gap:8px; }
   }
 
-  /* ===========================================================
-     SECTION 4 — WHO THIS IS FOR
-     =========================================================== */
-  .audience{ list-style:none; margin:0; padding:0; }
+  /* AUDIENCE */
+  .audience list-style:none; margin:0; padding:0;
   .audience li{
     font-family:var(--display);
     font-size:clamp(19px, 2.6vw, 26px);
@@ -283,9 +259,7 @@
   }
   .audience li:last-child{ border-bottom:1px solid var(--line); }
 
-  /* ===========================================================
-     SECTION 5 — CONTACT
-     =========================================================== */
+  /* CONTACT & FOOTER */
   .contact{ background:var(--ink); color:var(--bg); }
   .contact .heading h2{ color:var(--bg); }
   .contact p.lede2{
@@ -313,9 +287,14 @@
     display:flex; justify-content:space-between; align-items:center;
     font-family:var(--mono); font-size:11px; letter-spacing:0.06em;
     color:var(--text); opacity:0.55;
+    gap:16px;
   }
   .contact footer{ opacity:0.5; }
   footer.dark{ color:var(--bg); }
+  
+  @media (max-width: 480px) {
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
 </style>
 </head>
 <body>
@@ -327,19 +306,6 @@
     </div>
   </header>
 
-  <!-- =========================================================
-       SECTION 1 — HERO
-       To use a real photograph instead of the CSS turbine rig:
-       1) Add your image to /assets/hero.jpg
-       2) Replace the <div class="hero-rig">…</div> block below with:
-          <img class="hero-photo" src="assets/hero.jpg" alt="">
-          and add: .hero-photo{position:absolute;inset:0;width:100%;
-          height:100%;object-fit:cover;opacity:0.55;}
-       Sourcing: search Unsplash's "aircraft hangar", "aircraft
-       maintenance", and "aerospace manufacturing" collections for
-       low-key, high-contrast shots of engines or hangars — avoid
-       generic airliner/travel imagery per the anti-stock rule.
-       ========================================================= -->
   <section class="hero" id="top">
     <div class="hero-rig" aria-hidden="true">
       <div class="ring"></div>
@@ -355,9 +321,6 @@
     </div>
   </section>
 
-  <!-- =========================================================
-       MISSION
-       ========================================================= -->
   <section class="mission" id="mission">
     <div class="wrap">
       <div class="heading">
@@ -368,9 +331,6 @@
     </div>
   </section>
 
-  <!-- =========================================================
-       SECTION 2 — WHAT WE ARE BUILDING
-       ========================================================= -->
   <section id="building">
     <div class="wrap">
       <div class="heading">
@@ -382,7 +342,7 @@
         <span class="num">01</span>
         <div>
           <p class="stack-title">Certification pathways</p>
-          <p>Clear, structured route from zero to the Aircraft Maintenance Licence license. We support mechanics who already have CoRs from accredited EASA-approved partners, and help them find the practical experience and guidance they need to complete their AML.</p>
+          <p>Clear, structured route from zero to the Aircraft Maintenance Licence (AML). We support mechanics who already have CoRs from accredited EASA-approved partners, and help them find the practical experience and guidance they need to complete their AML.</p>
         </div>
       </div>
       <div class="stack-item">
@@ -396,7 +356,7 @@
         <span class="num">03</span>
         <div>
           <p class="stack-title">Talent and education</p>
-          <p>Programs for new candidate and upskilling for experienced mechanics. From foundational training to advanced specialisation, we focus on building confident, competent aviation engineers ready for real-world operations.</p>
+          <p>Programs for new candidates and upskilling for experienced mechanics. From foundational training to advanced specialisation, we focus on building confident, competent aviation engineers ready for real-world operations.</p>
         </div>
       </div>
       <div class="stack-item">
@@ -409,9 +369,6 @@
     </div>
   </section>
 
-  <!-- =========================================================
-       SECTION 3 — LEADERSHIP
-       ========================================================= -->
   <section id="leadership">
     <div class="wrap">
       <div class="heading">
@@ -442,9 +399,6 @@
     </div>
   </section>
 
-  <!-- =========================================================
-       SECTION 4 — WHO THIS IS FOR
-       ========================================================= -->
   <section id="for">
     <div class="wrap">
       <div class="heading">
@@ -462,9 +416,6 @@
     </div>
   </section>
 
-  <!-- =========================================================
-       SECTION 5 — CONTACT
-       ========================================================= -->
   <section class="contact" id="contact">
     <div class="wrap">
       <div class="heading">
@@ -482,8 +433,7 @@
       <span>© 2026</span>
     </footer>
   </section>
- <!-- Cloudflare Web Analytics -->
+
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2fb3f6f0618b467494f05c0b0afa0bc0"}'></script>
-  <!-- End Cloudflare Web Analytics -->
-</body>
+  </body>
 </html>

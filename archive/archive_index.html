@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Europejska Akademia Lotnictwa — EAL</title>
+<meta name="description" content="A school, platform, and community for the people who keep European aviation airborne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Inter:wght@400;500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #F2F4F7;   /* Signal White */
+    --text:      #344054;   /* body copy */
+    --ink:       #1A1C1E;   /* rules, headlines, hero ground */
+    --line:      rgba(52,64,84,0.22);
+    --display:   'Archivo', sans-serif;
+    --body:      'Inter', sans-serif;
+    --mono:      'Roboto Mono', monospace;
+    --edge:      1px solid var(--line);
+    --max:       1040px;
+    --gutter:    clamp(24px, 6vw, 96px);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; }
+  h1,h2,h3{ font-family:var(--display); color:var(--ink); margin:0; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding-left:var(--gutter); padding-right:var(--gutter); }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--text);
+    opacity:0.7;
+  }
+  :focus-visible{ outline:2px solid var(--ink); outline-offset:3px; }
+  @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+
+  /* NAV */
+  header.site{
+    position:sticky; top:0; z-index:20;
+    background:rgba(242,244,247,0.9);
+    backdrop-filter:blur(6px);
+    border-bottom:var(--edge);
+  }
+  header.site .bar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px var(--gutter);
+    max-width:var(--max); margin:0 auto;
+  }
+  .wordmark{
+    font-family:var(--mono);
+    font-size:14px;
+    letter-spacing:0.1em;
+    color:var(--ink);
+    text-decoration:none;
+  }
+  .wordmark span{ opacity:0.5; }
+  header.site nav a{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-decoration:none;
+    color:var(--text);
+  }
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:88vh;
+    display:flex; align-items:flex-end;
+    background:
+      radial-gradient(ellipse at 75% 20%, rgba(255,255,255,0.05), transparent 55%),
+      var(--ink);
+    color:var(--bg);
+    overflow:hidden;
+    border-bottom:1px solid rgba(242,244,247,0.15);
+  }
+  .hero-rig{
+    position:absolute;
+    top:50%; right:clamp(-120px, 4vw, 40px);
+    transform:translateY(-50%);
+    width:min(58vw, 620px);
+    aspect-ratio:1;
+    opacity:0.9;
+  }
+  .hero-rig .ring{
+    position:absolute; inset:0;
+    border-radius:50%;
+    border:1px solid rgba(242,244,247,0.14);
+  }
+  .hero-rig .ring:nth-child(2){ inset:9%; }
+  .hero-rig .ring:nth-child(3){ inset:18%; }
+  .hero-rig .blades{
+    position:absolute; inset:27%;
+    border-radius:50%;
+    background:conic-gradient(
+      from 0deg,
+      rgba(242,244,247,0.16) 0deg 8deg,
+      transparent 8deg 45deg,
+      rgba(242,244,247,0.10) 45deg 53deg,
+      transparent 53deg 90deg,
+      rgba(242,244,247,0.16) 90deg 98deg,
+      transparent 98deg 135deg,
+      rgba(242,244,247,0.10) 135deg 143deg,
+      transparent 143deg 180deg,
+      rgba(242,244,247,0.16) 180deg 188deg,
+      transparent 188deg 225deg,
+      rgba(242,244,247,0.10) 225deg 233deg,
+      transparent 233deg 270deg,
+      rgba(242,244,247,0.16) 270deg 278deg,
+      transparent 278deg 315deg,
+      rgba(242,244,247,0.10) 315deg 323deg,
+      transparent 323deg 360deg
+    );
+    filter:blur(0.3px);
+  }
+  .hero-rig .hub{
+    position:absolute; inset:44%;
+    border-radius:50%;
+    background:rgba(242,244,247,0.9);
+    box-shadow:0 0 40px rgba(242,244,247,0.25);
+  }
+  .hero-content{
+    position:relative; z-index:2;
+    max-width:var(--max); margin:0 auto;
+    width:100%;
+    padding:0 var(--gutter) 88px;
+  }
+  .hero-content .eyebrow{ color:var(--bg); opacity:0.55; margin-bottom:22px; display:block; }
+  .hero h1{
+    color:var(--bg);
+    font-weight:600;
+    font-size:clamp(30px, 4.6vw, 54px);
+    line-height:1.18;
+    max-width:15ch;
+    letter-spacing:-0.01em;
+  }
+  .hero-sub{
+    margin-top:26px;
+    max-width:46ch;
+    color:rgba(242,244,247,0.72);
+    font-size:16px;
+  }
+
+  /* MISSION */
+  .mission p{
+    max-width:62ch;
+    font-size:19px;
+    color:var(--ink);
+    line-height:1.6;
+  }
+
+  /* LAYOUT ELEMENTS */
+  section{ padding:104px 0; }
+  section .heading{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:32px;
+    margin-bottom:56px;
+  }
+  section .heading h2{
+    font-size:clamp(22px,2.6vw,28px);
+    font-weight:600;
+    max-width:20ch;
+  }
+  @media (max-width:640px){
+    section .heading{ grid-template-columns:1fr; gap:14px; }
+  }
+
+  /* WHAT WE ARE BUILDING */
+  .stack-item{
+    border-top:1px solid var(--line);
+    padding:30px 0;
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:32px;
+  }
+  .stack-item:last-child{ border-bottom:1px solid var(--line); }
+  .stack-item .num{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.1em;
+    color:var(--text);
+    opacity:0.55;
+    padding-top:3px;
+  }
+  .stack-item .stack-title{
+    margin:0 0 8px;
+    color:var(--ink);
+    font-family:var(--display);
+    font-weight:600;
+    font-size:18px;
+  }
+  .stack-item p{
+    margin:0;
+    color:var(--text);
+    font-size:15.5px;
+    line-height:1.6;
+    max-width:58ch;
+  }
+  @media (max-width:640px){
+    .stack-item{ grid-template-columns:1fr; gap:10px; }
+  }
+
+  /* LEADERSHIP */
+  .lede{
+    max-width:62ch;
+    font-size:17px;
+    color:var(--ink);
+    margin-bottom:64px;
+    padding-bottom:48px;
+    border-bottom:1px solid var(--line);
+  }
+  .leaders{ border-top:1px solid var(--line); }
+  .leader{
+    padding:30px 0;
+    border-bottom:1px solid var(--line);
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:32px;
+  }
+  .leader .name{
+    font-family:var(--display);
+    color:var(--ink);
+    font-size:18px;
+    font-weight:600;
+  }
+  .leader .bio{
+    font-size:15.5px;
+    color:var(--text);
+    line-height:1.6;
+    max-width:56ch;
+  }
+  @media (max-width:640px){
+    .leader{ grid-template-columns:1fr; gap:8px; }
+  }
+
+  /* AUDIENCE */
+  .audience list-style:none; margin:0; padding:0;
+  .audience li{
+    font-family:var(--display);
+    font-size:clamp(19px, 2.6vw, 26px);
+    font-weight:500;
+    color:var(--ink);
+    padding:22px 0;
+    border-top:1px solid var(--line);
+  }
+  .audience li:last-child{ border-bottom:1px solid var(--line); }
+
+  /* CONTACT & FOOTER */
+  .contact{ background:var(--ink); color:var(--bg); }
+  .contact .heading h2{ color:var(--bg); }
+  .contact p.lede2{
+    max-width:52ch;
+    font-size:18px;
+    color:rgba(242,244,247,0.78);
+    margin-bottom:44px;
+  }
+  .contact-links{ display:flex; flex-wrap:wrap; gap:14px; }
+  .contact-links a{
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:0.05em;
+    text-decoration:none;
+    color:var(--bg);
+    border:1px solid rgba(242,244,247,0.35);
+    padding:14px 22px;
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+  .contact-links a:hover{ background:var(--bg); color:var(--ink); }
+
+  footer{
+    padding:32px var(--gutter);
+    max-width:var(--max); margin:0 auto;
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:var(--mono); font-size:11px; letter-spacing:0.06em;
+    color:var(--text); opacity:0.55;
+    gap:16px;
+  }
+  .contact footer{ opacity:0.5; }
+  footer.dark{ color:var(--bg); }
+  
+  @media (max-width: 480px) {
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="site">
+    <div class="bar">
+      <a class="wordmark" href="#top">EAL<span> / europejska akademia lotnictwa</span></a>
+      <nav><a href="#contact">Contact</a></nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-rig" aria-hidden="true">
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="blades"></div>
+      <div class="hub"></div>
+    </div>
+    <div class="hero-content">
+      <span class="eyebrow">Europejska Akademia Lotnictwa</span>
+      <h1>A school, platform, and community for the people who keep European aviation flying.</h1>
+      <p class="hero-sub">Certification. Software. Talent. Led by people who work in hangars.</p>
+    </div>
+  </section>
+
+  <section class="mission" id="mission">
+    <div class="wrap">
+      <div class="heading">
+        <span class="eyebrow">Our mission</span>
+        <h2>Every mechanic, at every stage.</h2>
+      </div>
+      <p>We guide aircraft mechanics at every stage of their journey — from first steps in aviation to a full Aircraft Maintenance Licence (AML). Whether you're starting from zero, already hold Certificates of Recognition (CoR), or need experience at MROs to finalise your licence, we help you navigate the path.</p>
+    </div>
+  </section>
+
+  <section id="building">
+    <div class="wrap">
+      <div class="heading">
+        <span class="eyebrow">What we're building</span>
+        <h2>Four connected pillars, all designed for the hangar floor.</h2>
+      </div>
+
+      <div class="stack-item">
+        <span class="num">01</span>
+        <div>
+          <p class="stack-title">Certification pathways</p>
+          <p>Clear, structured route from zero to the Aircraft Maintenance Licence (AML). We support mechanics who already have CoRs from accredited EASA-approved partners, and help them find the practical experience and guidance they need to complete their AML.</p>
+        </div>
+      </div>
+      <div class="stack-item">
+        <span class="num">02</span>
+        <div>
+          <p class="stack-title">Digital tools for maintenance</p>
+          <p>Modern, practical software for maintenance operations. We build tools that match the reality of the hangar — smarter workflows, better documentation, and integrations that work for engineers.</p>
+        </div>
+      </div>
+      <div class="stack-item">
+        <span class="num">03</span>
+        <div>
+          <p class="stack-title">Talent and education</p>
+          <p>Programs for new candidates and upskilling for experienced mechanics. From foundational training to advanced specialisation, we focus on building confident, competent aviation engineers ready for real-world operations.</p>
+        </div>
+      </div>
+      <div class="stack-item">
+        <span class="num">04</span>
+        <div>
+          <p class="stack-title">Community</p>
+          <p>A network for the people who keep aircraft safe and serviceable. We connect mechanics, engineers, instructors, and MROs, creating a shared space for knowledge, opportunities, and professional growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <div class="wrap">
+      <div class="heading">
+        <span class="eyebrow">Leadership</span>
+        <h2>A family-founded venture, built on complementary expertise.</h2>
+      </div>
+
+      <p class="lede">Europejska Akademia Lotnictwa is built on complementary expertise across aviation, finance, strategy, and research.</p>
+
+      <div class="leaders">
+        <div class="leader">
+          <div class="name">Ricky Surie</div>
+          <div class="bio">50+ years in international business (Cessna, Bell Helicopter, Citicorp). Director at Taneja Aerospace and Aviation Limited.</div>
+        </div>
+        <div class="leader">
+          <div class="name">Gita Sud de Surie</div>
+          <div class="bio">Professor at Adelphi University; expert in innovation, global strategy, and organizational development.</div>
+        </div>
+        <div class="leader">
+          <div class="name">Aditi Surie Von Czechowski</div>
+          <div class="bio">Global brand strategist (15+ years) for Fortune 500 companies across the aviation and technology sectors.</div>
+        </div>
+        <div class="leader">
+          <div class="name">Piotr Surie Von Czechowski</div>
+          <div class="bio">Data product scientist (15 years) building operational systems for complex industries. Leading day-to-day operations.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="for">
+    <div class="wrap">
+      <div class="heading">
+        <span class="eyebrow">Who this is for</span>
+        <h2>Built for the people already doing the work.</h2>
+      </div>
+
+      <ul class="audience">
+        <li>Licensed mechanics navigating EU certification</li>
+        <li>MRO organisations and maintenance shops</li>
+        <li>Flight schools and aero clubs</li>
+        <li>Engineers entering the sector</li>
+        <li>Anyone who cares about the future of general aviation in Europe</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="heading">
+        <span class="eyebrow" style="color:rgba(242,244,247,0.55)">Get in touch</span>
+        <h2>Talk to us.</h2>
+      </div>
+      <p class="lede2">We're in early development and talking to the people who understand this sector. If that's you, write to us.</p>
+      <div class="contact-links">
+        <a href="mailto:piotr@eal.com">piotr@eal.com</a>
+        <a href="https://www.linkedin.com/in/piotr-surie-von-czechowski/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+    <footer class="dark">
+      <span>EAL — Koszalin / Berlin</span>
+      <span>© 2026</span>
+    </footer>
+  </section>
+
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2fb3f6f0618b467494f05c0b0afa0bc0"}'></script>
+  </body>
+</html>

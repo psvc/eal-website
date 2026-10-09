@@ -41,13 +41,13 @@
   section{padding:112px 0}
   .eyebrow{display:flex;align-items:center;gap:14px;font:500 12px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
   .eyebrow::before{content:"";width:36px;height:1px;background:currentColor}
-  .h2{font-family:var(--display);font-stretch:112%;font-weight:700;text-transform:uppercase;letter-spacing:-.015em;line-height:1.05;color:var(--signal);font-size:clamp(30px,4.4vw,56px);margin:22px 0 0;max-width:18ch}
+  .h2{font-family:var(--display);font-stretch:112%;font-weight:700;text-transform:uppercase;letter-spacing:-.015em;line-height:1.05;color:var(--signal);font-size:clamp(30px,4.4vw,56px);margin:22px 0 0 0}
   .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
   .chip{font:400 13px/1 var(--mono);color:var(--signal);background:var(--ink);border:1px solid var(--line);padding:13px 18px}
 
   /* NAV */
   header.site{position:sticky;top:0;z-index:30;background:rgba(13,14,16,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:var(--max);margin:0 auto;padding:16px var(--gutter)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:var(--max);margin:0 auto;padding:12px var(--gutter)}
   .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--signal)}
   .mark{width:34px;height:34px;border:1px solid var(--signal);display:grid;place-items:center}
   .mark svg{width:16px;height:16px}
@@ -73,12 +73,12 @@
   .rig i{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(242,244,247,.1)}
   .rig i:nth-child(2){inset:10%}.rig i:nth-child(3){inset:20%}.rig i:nth-child(4){inset:30%;border-style:dashed}
   .rig i:nth-child(5){inset:42%;background:conic-gradient(rgba(242,244,247,.14) 0 6deg,transparent 6deg 30deg) ;border:0;mask:radial-gradient(circle,transparent 18%,#000 19%)}
-  .hero-in{width:100%;max-width:var(--max);margin:0 auto;padding:120px var(--gutter) 88px}
-  .badge{display:inline-flex;align-items:center;gap:12px;font:400 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--signal);background:rgba(34,36,40,.8);border:1px solid var(--line);padding:11px 16px}
+  .hero-in{width:100%;max-width:var(--max);margin:0 auto;padding:clamp(60px, 8vw, 100px) var(--gutter) 60px}
+  .badge{display:inline-flex;align-items:center;gap:12px;font:400 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--signal);background:rgba(34,36,40,.8);border:1px solid var(--line)}
   .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok)}
-  .hero h1{margin-top:34px;font-family:var(--display);font-stretch:118%;font-weight:850;text-transform:uppercase;letter-spacing:-.03em;line-height:.98;color:var(--signal);font-size:clamp(34px,7.2vw,104px);max-width:14ch}
+  .hero h1{margin-top:24px;font-family:var(--display);font-stretch:118%;font-weight:850;text-transform:uppercase;letter-spacing:-.03em;line-height:.98;color:var(--signal);font-size:clamp(34px,7.2vw,100px)}
   .hero h1 .o{color:transparent;-webkit-text-stroke:1.5px var(--signal)}
-  .hero p.sub{margin-top:36px;max-width:56ch;font-size:clamp(16px,1.6vw,19px);color:var(--muted)}
+  .hero p.sub{margin-top:32px;max-width:56ch;font-size:clamp(16px,1.6vw,19px);color:var(--muted)}
   .hero p.sub strong{color:var(--signal);font-weight:500}
 
   /* ECOSYSTEM */
@@ -105,7 +105,7 @@
   .card:hover{border-color:rgba(242,244,247,.38);transform:translateY(-2px)}
   .card .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:36px}
   .card .id{font:500 14px/1 var(--mono);letter-spacing:.08em;color:var(--faint)}
-  .tag{display:inline-flex;align-items:center;gap:9px;font:400 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--signal);background:rgba(13,14,16,.5);border:1px solid var(--line);padding:9px 12px}
+  .tag{display:inline-flex;align-items:center;gap:9px;font:400 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--signal);background:rgba(13,14,16,.5);border:1px solid var(--line)}
   .tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok)}
   .card h3{font-family:var(--display);font-stretch:112%;font-weight:700;text-transform:uppercase;letter-spacing:-.01em;line-height:1.1;color:var(--signal);font-size:clamp(22px,2.4vw,30px)}
   .card p{margin-top:16px;flex:1}
@@ -152,7 +152,6 @@
 </style>
 </head>
 <body>
-
 <header class="site">
   <div class="bar">
     <a class="brand" href="#top" aria-label="EAL home">
@@ -167,25 +166,22 @@
     </nav>
   </div>
 </header>
-
 <main id="top">
-
   <section class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="rig" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
     <div class="hero-in">
       <span class="badge">Europejska Akademia Lotnictwa · EASA framework</span>
       <h1>A school, platform, and community for the people who <span class="o">keep European aviation flying.</span></h1>
-      <p class="sub">Europejska Akademia Lotnictwa (EAL) builds structured certification pathways toward Aircraft Maintenance License, digital maintenance tools, and professional upskilling across Europe. <strong>Led by people who work in hangars.</strong></p>
+      <p class="sub">Europejska Akademia Lotnictwa (EAL) builds structured certification pathways toward Aircraft Maintenance License, digital maintenance tools, and professional upskilling across Europe — from mechanics and MROs to flight schools and engineers.</p>
     </div>
   </section>
-
   <section id="ecosystem">
     <div class="wrap">
       <div>
         <div class="eyebrow">European ecosystem</div>
         <h2 class="h2">Connecting the European aviation industry</h2>
-        <p class="lead">An integrated platform for mechanics, engineers, instructors, Maintenance Repair Overhaul (MRO) facilities, and flight schools — from first steps in aviation to a full Aircraft Maintenance Licence (AML).</p>
+        <p class="lead">An integrated platform for mechanics, engineers, instructors, Maintenance Repair Overhaul (MRO) facilities, and flight schools — from first steps in aviation to a full Aircraft Maintenance License.</p>
         <div class="chips">
           <span class="chip">Aircraft Mechanics</span>
           <span class="chip">Aeronautical Engineers</span>
@@ -195,7 +191,6 @@
       </div>
     </div>
   </section>
-
   <section class="modules" id="modules">
     <div class="wrap">
       <div class="eyebrow">What we're building</div>
@@ -204,7 +199,7 @@
         <article class="card">
           <div class="top"><span class="id">01 // CERT</span><span class="tag">Pathway</span></div>
           <h3>Certification pathways</h3>
-          <p>A clear, structured route from zero to the Aircraft Maintenance License (AML). We support mechanics who already hold Certificates of Recognition (CoR) from accredited EASA-approved partners, and help them find the practical experience and guidance to complete their licence.</p>
+          <p>A clear, structured route from zero to the Aircraft Maintenance License (AML). We support mechanics who already hold Certificates of Recognition (CoR) from accredited EASA-approved partners.</p>
           <div class="foot"><span>Module: AML-Navigator</span><span>[EASA framework]</span></div>
         </article>
         <article class="card">
@@ -228,14 +223,13 @@
       </div>
     </div>
   </section>
-
   <section id="engineered">
     <div class="wrap">
       <div>
         <div class="eyebrow">Aeronautical modernism &amp; technical utility</div>
         <h2 class="h2">Engineered for aircraft mechanics &amp; maintenance operations</h2>
         <p class="lead" style="color:var(--signal)">EAL is an aviation education platform and community supporting aircraft mechanics across Europe.</p>
-        <p class="lead" style="margin-top:18px">We bridge the gap between rigorous regulatory requirements and practical hangar execution — with structured guidance toward Aircraft Maintenance License, modern digital tools, and professional upskilling.</p>
+        <p class="lead" style="margin-top:18px">We bridge the gap between rigorous regulatory requirements and practical hangar execution — with structured guidance toward Aircraft Maintenance Licenses and professional upskilling.</p>
         <div class="chips">
           <span class="chip">EASA Framework Support</span>
           <span class="chip">Hangar Workflows</span>
@@ -244,19 +238,17 @@
       </div>
     </div>
   </section>
-
   <section class="values" id="values">
     <div class="wrap">
       <div class="eyebrow">Operational philosophy</div>
       <h2 class="h2">Core values</h2>
       <div class="vgrid">
-        <article class="v"><span class="n">01</span><h3>Practical expertise</h3><p>Rooted in actual hangar reality and real-world aircraft maintenance requirements — utilitarian execution over theoretical abstraction.</p></article>
+        <article class="v"><span class="n">01</span><h3>Practical expertise</h3><p>Rooted in actual hangar reality and real-world aircraft maintenance requirements — utilitarian execution over theory.</p></article>
         <article class="v"><span class="n">02</span><h3>Community</h3><p>Direct collaboration between mechanics, engineers, flight schools, and MROs to elevate aviation safety and standards continent-wide.</p></article>
         <article class="v"><span class="n">03</span><h3>Education</h3><p>Clear, structured pathways and continuous upskilling to support long-term career growth and technical authority.</p></article>
       </div>
     </div>
   </section>
-
   <section id="leadership">
     <div class="wrap">
       <div class="eyebrow">Leadership</div>
@@ -270,7 +262,6 @@
       </div>
     </div>
   </section>
-
   <section id="for" style="background:var(--ink);border-top:1px solid var(--line)">
     <div class="wrap">
       <div class="eyebrow">Who this is for</div>
@@ -284,7 +275,6 @@
       </ul>
     </div>
   </section>
-
   <section class="contact" id="contact">
     <div class="wrap">
       <div class="eyebrow">Get in touch</div>
@@ -297,14 +287,13 @@
     </div>
   </section>
 </main>
-
 <footer>
   <div class="wrap">
     <div class="fgrid">
       <div>
         <a class="brand" href="#top">
           <span class="mark" aria-hidden="true" style="width:46px;height:46px"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 2l12 12"/></svg></span>
-          <span><b style="font-size:18px;display:block">EUROPEJSKA AKADEMIA LOTNICTWA</b><small style="font:400 11px/1.6 var(--mono);letter-spacing:.2em;color:var(--faint)">AIRCRAFT MAINTENANCE EDUCATION PLATFORM</small></span>
+          <span><b style="font-size:18px;display:block">EUROPEJSKA AKADEMIA LOTNICTWA</b><small style="font:400 11px/1.6 var(--mono);letter-spacing:.2em;color:var(--faint)">AIRCRAFT MAINTENANCE EDUCATION</small></span>
         </a>
         <p class="about">A school, platform, and community for the people who keep European aviation flying.</p>
       </div>
@@ -330,7 +319,6 @@
     <div class="fine"><span>EAL — Koszalin / Berlin · © 2026</span><span>Aeronautical modernism // technical austerity</span></div>
   </div>
 </footer>
-
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2fb3f6f0618b467494f05c0b0afa0bc0"}'></script>
 </body>
 </html>

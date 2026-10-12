@@ -49,8 +49,8 @@
   header.site{position:sticky;top:0;z-index:30;background:rgba(13,14,16,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:var(--max);margin:0 auto;padding:12px var(--gutter)}
   .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--signal)}
-  .mark{width:34px;height:34px;border:1px solid var(--signal);display:grid;place-items:center}
-  .mark svg{width:16px;height:16px}
+  .mark{width:34px;height:34px;border:1px solid var(--signal);display:grid;place-items:center;overflow:visible}
+  .mark svg{width:16px;height:16px;display:block}
   .brand b{font:700 14px/1 var(--display);font-stretch:115%;letter-spacing:.06em}
   nav{display:flex;gap:28px}
   nav a{font:400 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color .15s}
@@ -155,7 +155,20 @@
 <header class="site">
   <div class="bar">
     <a class="brand" href="#top" aria-label="EAL home">
-      <span class="mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 2l12 12"/></svg></span>
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="2" width="96" height="96" stroke="currentColor" stroke-width="2.5"/>
+          <g stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M26 48L47 65L72 40"/>
+            <path d="M72 40L52 58L49 72"/>
+            <path d="M26 48L14 62"/>
+            <path d="M49 72L62 86"/>
+            <path d="M72 40L86 28"/>
+            <path d="M47 65L26 82"/>
+            <path d="M52 58L74 86"/>
+          </g>
+        </svg>
+      </span>
       <b>EAL / europejska akademia lotnictwa</b>
     </a>
     <nav aria-label="Primary">
@@ -292,7 +305,20 @@
     <div class="fgrid">
       <div>
         <a class="brand" href="#top">
-          <span class="mark" aria-hidden="true" style="width:46px;height:46px"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 2l12 12"/></svg></span>
+          <span class="mark" aria-hidden="true" style="width:46px;height:46px">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="2" y="2" width="96" height="96" stroke="currentColor" stroke-width="2.8"/>
+              <g stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M26 48L47 65L72 40"/>
+                <path d="M72 40L52 58L49 72"/>
+                <path d="M26 48L14 62"/>
+                <path d="M49 72L62 86"/>
+                <path d="M72 40L86 28"/>
+                <path d="M47 65L26 82"/>
+                <path d="M52 58L74 86"/>
+              </g>
+            </svg>
+          </span>
           <span><b style="font-size:18px;display:block">EUROPEJSKA AKADEMIA LOTNICTWA</b><small style="font:400 11px/1.6 var(--mono);letter-spacing:.2em;color:var(--faint)">AIRCRAFT MAINTENANCE EDUCATION</small></span>
         </a>
         <p class="about">A school, platform, and community for the people who keep European aviation flying.</p>

@@ -8,7 +8,6 @@
 <meta name="theme-color" content="#141517">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Archivo (variable: width + weight) = display, Inter = body, JetBrains Mono = technical labels. All SIL OFL via Google Fonts. -->
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Inter:wght@300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -50,7 +49,7 @@
   .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:var(--max);margin:0 auto;padding:12px var(--gutter)}
   .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--signal)}
   .mark{width:34px;height:34px;display:grid;place-items:center;overflow:visible}
-  .mark img{width:100%;height:100%;object-fit:contain}
+  .mark img{display:block;width:100%;height:100%;object-fit:contain}
   .brand b{font:700 14px/1 var(--display);font-stretch:115%;letter-spacing:.06em}
   nav{display:flex;gap:28px}
   nav a{font:400 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color .15s}
@@ -60,20 +59,12 @@
 
   /* HERO */
   .hero{position:relative;padding:0;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--ink);border-bottom:1px solid var(--line);isolation:isolate}
-  .hero-bg{position:absolute;inset:0;z-index:-1;
-    background:
-      linear-gradient(90deg,rgba(13,14,16,.92) 0%,rgba(13,14,16,.55) 55%,rgba(13,14,16,.2) 100%),
-      /* url("assets/blueprint-banner.jpg") center/cover no-repeat,*/
-      linear-gradient(rgba(242,244,247,.045) 1px,transparent 1px) 0 0/48px 48px,
-      linear-gradient(90deg,rgba(242,244,247,.045) 1px,transparent 1px) 0 0/48px 48px,
-      radial-gradient(ellipse at 78% 30%,rgba(242,244,247,.07),transparent 60%),
-      var(--ink)}
-  /* turbine rings: pure CSS fallback/accent, no image required */
+  .hero-bg{position:absolute;inset:0;z-index:-1; background:linear-gradient(90deg,rgba(13,14,16,.92) 0%,rgba(13,14,16,.55) 55%,rgba(13,14,16,.2) 100%),linear-gradient(rgba(242,244,247,.045) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,rgba(242,244,247,.045) 1px,transparent 1px) 0 0/48px 48px,radial-gradient(ellipse at 78% 30%,rgba(242,244,247,.07),transparent 60%),var(--ink)}
   .rig{position:absolute;z-index:-1;right:-6vw;top:50%;width:min(62vw,720px);aspect-ratio:1;transform:translateY(-50%);opacity:.7}
   .rig i{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(242,244,247,.1)}
   .rig i:nth-child(2){inset:10%}.rig i:nth-child(3){inset:20%}.rig i:nth-child(4){inset:30%;border-style:dashed}
   .rig i:nth-child(5){inset:42%;background:conic-gradient(rgba(242,244,247,.14) 0 6deg,transparent 6deg 30deg) ;border:0;mask:radial-gradient(circle,transparent 18%,#000 19%)}
-  .hero-in{width:100%;max-width:var(--max);margin:0 auto;padding:clamp(60px, 8vw, 100px) var(--gutter) 60px}
+  .hero-in{width:100%;max-width:var(--max);margin:0 auto;padding:clamp(60px,8vw,100px) var(--gutter) 60px}
   .badge{display:inline-flex;align-items:center;gap:12px;font:400 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--signal);background:rgba(34,36,40,.8);border:1px solid var(--line)}
   .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok)}
   .hero h1{margin-top:24px;font-family:var(--display);font-stretch:118%;font-weight:850;text-transform:uppercase;letter-spacing:-.03em;line-height:.98;color:var(--signal);font-size:clamp(34px,7.2vw,100px)}
@@ -85,9 +76,7 @@
   .split{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,6vw,88px);align-items:center}
   @media (max-width:880px){.split{grid-template-columns:1fr}}
   .lead{margin-top:28px;max-width:54ch;font-size:17px}
-  .plate{position:relative;aspect-ratio:4/3;background:
-      repeating-linear-gradient(135deg,rgba(242,244,247,.05) 0 1px,transparent 1px 14px),var(--void);
-    border:1px solid var(--line);overflow:hidden}
+  .plate{position:relative;aspect-ratio:4/3;background:repeating-linear-gradient(135deg,rgba(242,244,247,.05) 0 1px,transparent 1px 14px),var(--void);border:1px solid var(--line);overflow:hidden}
   .plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08)}
   .plate.frame{padding:0;overflow:visible;border:0;background:none}
   .plate.frame>.in{position:absolute;inset:22px;background:repeating-linear-gradient(135deg,rgba(242,244,247,.05) 0 1px,transparent 1px 14px),var(--void);overflow:hidden}
@@ -155,7 +144,7 @@
 <header class="site">
   <div class="bar">
     <a class="brand" href="#top" aria-label="EAL home">
-      <span class="mark" aria-hidden="true"><img src="assets/logo_eal_lighter_1024.jpeg" alt="EAL logo"></span>
+      <span class="mark" aria-hidden="true"><img src="assets/eal-logo-lighter-transparent.png" alt="EAL logo"></span>
       <b>EAL / europejska akademia lotnictwa</b>
     </a>
     <nav aria-label="Primary">
@@ -166,6 +155,7 @@
     </nav>
   </div>
 </header>
+
 <main id="top">
   <section class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
@@ -176,6 +166,7 @@
       <p class="sub">Europejska Akademia Lotnictwa (EAL) builds structured certification pathways toward Aircraft Maintenance License, digital maintenance tools, and professional upskilling across Europe — from mechanics and MROs to flight schools and engineers.</p>
     </div>
   </section>
+
   <section id="ecosystem">
     <div class="wrap">
       <div>
@@ -191,6 +182,7 @@
       </div>
     </div>
   </section>
+
   <section class="modules" id="modules">
     <div class="wrap">
       <div class="eyebrow">What we're building</div>
@@ -223,6 +215,7 @@
       </div>
     </div>
   </section>
+
   <section id="engineered">
     <div class="wrap">
       <div>
@@ -238,6 +231,7 @@
       </div>
     </div>
   </section>
+
   <section class="values" id="values">
     <div class="wrap">
       <div class="eyebrow">Operational philosophy</div>
@@ -249,6 +243,7 @@
       </div>
     </div>
   </section>
+
   <section id="leadership">
     <div class="wrap">
       <div class="eyebrow">Leadership</div>
@@ -262,6 +257,7 @@
       </div>
     </div>
   </section>
+
   <section id="for" style="background:var(--ink);border-top:1px solid var(--line)">
     <div class="wrap">
       <div class="eyebrow">Who this is for</div>
@@ -275,6 +271,7 @@
       </ul>
     </div>
   </section>
+
   <section class="contact" id="contact">
     <div class="wrap">
       <div class="eyebrow">Get in touch</div>
@@ -287,12 +284,13 @@
     </div>
   </section>
 </main>
+
 <footer>
   <div class="wrap">
     <div class="fgrid">
       <div>
         <a class="brand" href="#top">
-          <span class="mark" style="width:46px;height:46px"><img src="assets/logo_eal_lighter_1024.jpeg" alt="EAL logo"></span>
+          <span class="mark" aria-hidden="true" style="width:46px;height:46px"><img src="assets/eal-logo-lighter-transparent.png" alt="EAL logo"></span>
           <span><b style="font-size:18px;display:block">EUROPEJSKA AKADEMIA LOTNICTWA</b><small style="font:400 11px/1.6 var(--mono);letter-spacing:.2em;color:var(--faint)">AIRCRAFT MAINTENANCE EDUCATION</small></span>
         </a>
         <p class="about">A school, platform, and community for the people who keep European aviation flying.</p>
@@ -316,9 +314,8 @@
         </ul>
       </div>
     </div>
-    <div class="fine"><span>EAL — Koszalin / Berlin · © 2026</span></div>
+    <div class="fine"><span>EAL — Koszalin / Berlin · © 2026</span><span>Aircraft maintenance education</span></div>
   </div>
 </footer>
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2fb3f6f0618b467494f05c0b0afa0bc0"}'></script>
 </body>
 </html>
